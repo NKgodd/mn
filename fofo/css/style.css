@@ -1,0 +1,154 @@
+/* Estilo geral do corpo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8bbd0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Remove a rolagem da tela */
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    max-width: 90%;
+    width: 400px;
+    height: 300px; /* Ajusta a altura do container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1; /* Garante que o container fique acima do carrossel */
+}
+
+/* Título */
+h1 {
+    color: #d81b60;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Botão principal */
+button {
+    background-color: #d81b60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #c2185b;
+}
+
+/* Botões de resposta */
+.response {
+    position: absolute;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease;
+    max-width: calc(100% - 20px); /* Garante que o botão não ultrapasse a largura do container */
+}
+
+/* Botão "Sim" */
+#yes {
+    background-color: #4caf50;
+    top: 10px; /* Fixado no topo da página */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    position: fixed; /* Fixar na parte superior da página */
+}
+
+/* Botão "Não" */
+#no {
+    background-color: #f44336;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+}
+
+/* Carrossel de fotos */
+.carousel {
+    position: absolute;
+    bottom: 20px; /* Ajuste a posição se necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 200px; /* Ajuste a altura das imagens conforme necessário */
+    object-fit: cover; /* Faz com que as imagens se ajustem ao tamanho sem distorcer */
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Ajusta a largura do container em dispositivos menores */
+        height: auto; /* Ajusta a altura automaticamente */
+    }
+
+    h1 {
+        font-size: 1.3em; /* Reduz o tamanho da fonte do título */
+    }
+
+    button {
+        padding: 8px 16px; /* Ajusta o padding do botão */
+        font-size: 0.9em; /* Reduz o tamanho da fonte do botão */
+    }
+
+    .response {
+        font-size: 1em; /* Ajusta o tamanho da fonte dos botões de resposta */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Ajusta a largura do container para telas muito pequenas */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.1em; /* Ajusta ainda mais o tamanho da fonte do título */
+    }
+
+    button {
+        padding: 6px 12px; /* Ajusta o padding do botão */
+        font-size: 0.8em; /* Reduz o tamanho da fonte do botão */
+    }
+
+    .response {
+        font-size: 0.9em; /* Ajusta o tamanho da fonte dos botões de resposta */
+        padding: 8px; /* Ajusta o padding dos botões de resposta */
+        max-width: calc(100% - 16px); /* Garante que o botão "Não" não ultrapasse a tela */
+    }
+}
